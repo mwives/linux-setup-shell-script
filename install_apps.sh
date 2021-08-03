@@ -97,6 +97,7 @@ echo "- Docker Machine"
 echo "- Docker Compose"
 echo "- NodeJS"
 
-echo "\n-- Please now run: --"
-echo "-- sudo usermod -aG docker <your usernam> --"
+echo "\nPlease now run:"
+echo "sudo usermod -aG docker <your username>"
+echo "Then,logout"
 
