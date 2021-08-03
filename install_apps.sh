@@ -20,9 +20,6 @@ sudo apt-get install -y gnome-tweaks
 ## Visual Studio Code
 sudo snap install --classic code
 
-## Git
-sudo apt-get install -y git
-
 ## Postman
 sudo snap install postman
 
