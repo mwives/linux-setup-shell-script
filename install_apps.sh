@@ -39,9 +39,18 @@ rm -f mongo*.deb
 sudo snap install beekeeper-studio
 
 ## Docker
+# Docker CE
 curl -fsSL "https://get.docker.com" -o get-docker.sh
 sh get-docker.sh
 rm get-docker.sh
+# Docker Machine
+base=https://github.com/docker/machine/releases/download/v0.16.0 \
+  && curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine \
+  && sudo mv /tmp/docker-machine /usr/local/bin/docker-machine \
+  && chmod +x /usr/local/bin/docker-machine
+# Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 ## NodeJS
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
@@ -84,4 +93,10 @@ git config --global init.defaultBranch "main"
 echo "Please check if the following programs are on the latest version:"
 echo "- MongoDB"
 echo "- MongoDB Compass"
+echo "- Docker Machine"
+echo "- Docker Compose"
 echo "- NodeJS"
+
+echo "\n-- Please now run: --"
+echo "-- sudo usermod -aG docker <your usernam> --"
+
